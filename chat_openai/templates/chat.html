@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interattiva</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box">
+            <!-- I messaggi della chat appariranno qui -->
+        </div>
+        <div class="input-box">
+            <!-- Il campo nascosto per il token CSRF -->
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <input type="text" id="userInput" placeholder="Ciao caro, dimmi tutto">
+            <button id="sendButton">Invia</button>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
